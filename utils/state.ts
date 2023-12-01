@@ -19,7 +19,7 @@ export type AppStateType = {
 
 function createAppState(): AppStateType {
     
-    const cartData = localStorage.getItem("CART");
+    const cartData = window.localStorage.getItem("CART");
     const cart = signal<CartItem[]>(cartData ? JSON.parse(cartData) : []);
 
     const addToCart: AddToCartFunction = (item: Item): void => {
@@ -31,7 +31,7 @@ function createAppState(): AppStateType {
         } else {
             cart.value = [...cart.value, {id: item.id, name: item.name, price:item.price, quantity: 1}]
         }
-        localStorage.setItem("CART", JSON.stringify(cart.value));
+        window.localStorage.setItem("CART", JSON.stringify(cart.value));
     }
 
     const removeFromCart: RemoveFromCartFunction = (id: number): void => {
@@ -44,7 +44,7 @@ function createAppState(): AppStateType {
             } else {
                 cart.value = cart.value.filter((cartItem) => cartItem.id !== id);
             }
-            localStorage.setItem("CART", JSON.stringify(cart.value));
+            window.localStorage.setItem("CART", JSON.stringify(cart.value));
         }
     }
 

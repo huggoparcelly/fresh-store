@@ -10,8 +10,4 @@ import { start } from "$fresh/server.ts";
 import manifest from "./fresh.gen.ts";
 import config from "./fresh.config.ts";
 
-import { installGlobals } from "https://deno.land/x/virtualstorage@0.1.0/mod.ts";
-
-installGlobals()
-
 await start(manifest, config);

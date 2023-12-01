@@ -22,7 +22,7 @@ export type AppStateType = {
 
 function createAppState(): AppStateType {
     
-    const cartData = localStorage.getItem("CART")
+    const cartData = localStorage.getItem("CART");
     const cart = signal<CartItem[]>(cartData ? JSON.parse(cartData) : []);
 
     const addToCart: AddToCartFunction = (item: Item): void => {

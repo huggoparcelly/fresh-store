@@ -1,9 +1,6 @@
 import { Signal, signal } from "@preact/signals";
 import { Item } from "./items.ts";
 
-
-const { localStorage } = window
-
 export type AddToCartFunction = (item: Item) => void;
 export type RemoveFromCartFunction = (id: number) => void;
 

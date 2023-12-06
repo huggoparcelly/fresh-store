@@ -17,7 +17,7 @@ export default function Cart() {
 
       document.body.appendChild(form);
 
-      window.localStorage.removeItem("CART");
+      // localStorage.removeItem("CART");
 
       form.submit();
     }
